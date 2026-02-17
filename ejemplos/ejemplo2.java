@@ -1,17 +1,20 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class ListaPlacas {
+public class ejemplo2 {
     public static void main(String[] args) {
-        ArrayList<String> placas = new ArrayList<>();
-        placas.add("ABC123");
-        placas.add("XYZ789");
-        placas.add("LMN456");
-        placas.add("PQR321");
-        
-        for (String placa : placas) {
-            System.out.println(placa);
+        HashMap<String, Integer> repuestos = new HashMap<>();
+        repuestos.put("Filtro de aceite", 10);
+        repuestos.put("Pastillas de freno", 25);
+        repuestos.put("Bujías", 30);
+        repuestos.put("Batería", 15);
+        repuestos.put("Correa de distribución", 40);
+
+        int contadorPares = 0;
+        for (int valor : repuestos.values()) {
+            if (valor % 2 == 0) {
+                contadorPares++;
+            }
         }
-        
-        System.out.println("Total de placas: " + placas.size());
+        System.out.println("Total números pares en repuestos: " + contadorPares);
     }
 }
